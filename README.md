@@ -1,0 +1,104 @@
+# Developer Information
+
+**Fuyad Hassan** - ID: 232-134-043  
+**Guljar Hosen** - ID: 232-134-010
+
+---
+
+# Entity Recognition System
+
+A powerful Named Entity Recognition (NER) system built with Flask and spaCy. It extracts and visualizes entities like Persons, Organizations, Dates, and more from text using a stunning, dynamic web interface with animated backgrounds, smooth transitions, and interactive elements.
+
+## ✨ Features
+
+- **Real-time Extraction**: Instantly identifies entities in text with advanced spaCy NLP models.
+- **Dynamic Visual Interface**: Animated rainbow header, floating particles, and smooth transitions.
+- **Interactive Animations**: Typewriter effects, bounce-in statistics, and hover animations.
+- **Color-coded Visualization**: Beautiful entity highlighting with custom color schemes.
+- **Responsive Design**: Modern UI with backdrop blur effects and gradient backgrounds.
+- **JSON API**: RESTful endpoints for seamless integration.
+- **Dockerized**: Easy deployment with Docker Compose.
+- **Progress Feedback**: Animated loading indicators during text analysis.
+
+## 🚀 Quick Start (Local)
+
+1. **Install Dependencies**:
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate  # On Windows
+    # or
+    source venv/bin/activate  # On macOS/Linux
+    pip install -r requirements.txt
+    python -m spacy download en_core_web_lg
+    ```
+
+2. **Run the Application**:
+    ```bash
+    python app.py
+    ```
+
+3. **Access**: Open [http://localhost:5000](http://localhost:5000)
+
+## 🐳 Docker Deployment
+
+1. **Build and Run**:
+    ```bash
+    docker-compose -f deployment/docker-compose.yml up --build -d
+    ```
+
+2. **Access**: Open [http://localhost:5000](http://localhost:5000)
+
+## 🎨 UI Highlights
+
+- **Animated Header**: Rainbow gradient background that continuously shifts colors
+- **Particle Effects**: Floating background particles for ambient animation
+- **Smooth Transitions**: Fade-in, slide-in, and bounce effects throughout the interface
+- **Interactive Elements**: Ripple effects on buttons and scaling animations on hover
+- **Progress Visualization**: Animated progress bar during entity extraction
+- **Typewriter Animation**: Dynamic text reveal for the main title
+
+## 📡 API Usage
+
+**Endpoint**: `POST /api/extract`
+
+**Body**:
+```json
+{
+    "text": "Elon Musk bought Twitter for $44 billion."
+}
+```
+
+**Response**:
+```json
+{
+    "total_entities": 3,
+    "entities": [
+        {
+            "text": "Elon Musk",
+            "label": "PERSON",
+            "start": 0,
+            "end": 9
+        },
+        {
+            "text": "Twitter",
+            "label": "ORG",
+            "start": 16,
+            "end": 23
+        },
+        {
+            "text": "$44 billion",
+            "label": "MONEY",
+            "start": 29,
+            "end": 40
+        }
+    ],
+    "entities_by_type": {
+        "PERSON": ["Elon Musk"],
+        "ORG": ["Twitter"],
+        "MONEY": ["$44 billion"]
+    },
+    "people": ["Elon Musk"],
+    "organizations": ["Twitter"],
+    "highlighted_html": "<span class=\"entity-mark entity-PERSON\">Elon Musk</span> bought <span class=\"entity-mark entity-ORG\">Twitter</span> for <span class=\"entity-mark entity-MONEY\">$44 billion</span>."
+}
+```
