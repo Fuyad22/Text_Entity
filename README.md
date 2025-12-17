@@ -73,7 +73,7 @@ If you want to create your own executable:
     ```
 
 3. **Find the executable**:
-    - Location: `dist/Entity Recognition System.exe`
+    - Location: `Entity Recognition System.exe` (in project root)
     - Size: ~200-500MB (includes Python runtime and models)
 
 ### Features

@@ -36,9 +36,15 @@ if exist "dist\Entity Recognition System.exe" (
     echo SUCCESS! Executable created successfully!
     echo ================================================
     echo.
-    echo Location: %CD%\dist\Entity Recognition System.exe
-    echo Size: 
-    dir /b "dist\Entity Recognition System.exe" | for %%A in ("dist\Entity Recognition System.exe") do echo %%~zA bytes
+    echo Moving executable to project root...
+    move "dist\Entity Recognition System.exe" "Entity Recognition System.exe"
+    echo.
+    echo ================================================
+    echo Executable ready for distribution!
+    echo ================================================
+    echo.
+    echo Location: %CD%\Entity Recognition System.exe
+    dir /b "Entity Recognition System.exe" | for %%A in ("Entity Recognition System.exe") do echo Size: %%~zA bytes
     echo.
     echo Instructions for users:
     echo 1. Copy the .exe file to any Windows computer
