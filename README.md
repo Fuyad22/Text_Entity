@@ -205,4 +205,4 @@ Press CTRL+C to stop
 
 ## 📂 Repository
 
-GitHub: [https://github.com/Fuyad22/Text_Entity.git](https://github.com/Fuyad22/Text_Entity.git)
+GitHub: [https://github.com/Fuyad22/Named_Entity_Detection](https://github.com/Fuyad22/Named_Entity_Detection)
