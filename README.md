@@ -48,6 +48,72 @@ A powerful Named Entity Recognition (NER) system built with Flask and spaCy. It 
 
 2. **Access**: Open [http://localhost:5000](http://localhost:5000)
 
+## 💻 Command Line Usage
+
+### Prerequisites
+Make sure you have:
+- Python 3.7+ installed
+- Virtual environment set up with dependencies installed
+- spaCy language model downloaded
+
+### Step-by-Step Commands
+
+1. **Navigate to the project directory**:
+    ```bash
+    cd "path/to/Named Entity Recognition"
+    ```
+
+2. **Activate the virtual environment**:
+    ```bash
+    # On Windows
+    source .venv/Scripts/activate
+    
+    # On macOS/Linux
+    source venv/bin/activate
+    ```
+    
+
+3. **Start the Flask application**:
+    ```bash
+    python app.py
+    ```
+
+### Alternative: Direct execution
+If you prefer not to activate the virtual environment:
+```bash
+# Windows
+"C:/path/to/project/.venv/Scripts/python.exe" app.py
+
+# macOS/Linux
+/path/to/project/venv/bin/python app.py
+```
+
+### Expected Output
+Once running, you should see:
+```
+============================================================
+ENTITY RECOGNITION SYSTEM API
+============================================================
+
+Server running at: http://0.0.0.0:5000
+
+Endpoints:
+  POST /api/extract - Extract entities from text
+  POST /api/batch - Batch entity extraction
+  GET  /health - Health check
+
+Press CTRL+C to stop
+```
+
+### Stopping the Application
+- Press `Ctrl+C` in the terminal to stop the server
+- The application runs in debug mode with auto-restart on code changes
+
+### Troubleshooting
+- **Import errors**: Ensure dependencies are installed with `pip install -r requirements.txt`
+- **spaCy model missing**: Run `python -m spacy download en_core_web_lg`
+- **Port already in use**: Change the port in `app.py` or kill the process using port 5000
+
 ## 🎨 UI Highlights
 
 - **Animated Header**: Rainbow gradient background that continuously shifts colors
@@ -102,3 +168,7 @@ A powerful Named Entity Recognition (NER) system built with Flask and spaCy. It 
     "highlighted_html": "<span class=\"entity-mark entity-PERSON\">Elon Musk</span> bought <span class=\"entity-mark entity-ORG\">Twitter</span> for <span class=\"entity-mark entity-MONEY\">$44 billion</span>."
 }
 ```
+
+## 📂 Repository
+
+GitHub: [https://github.com/Fuyad22/Text_Entity.git](https://github.com/Fuyad22/Text_Entity.git)
